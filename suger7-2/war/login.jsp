@@ -13,8 +13,9 @@
     </head>
   <h1>Suger Popへようこそ！</h1>
 
-  <form action="login.do" method="post" class="login">
+  <form action="login.do" method="get" class="login">
     <table>
+   
     <tr>
       <td>ユーザ名</td>
       <td><input type="text" name="user" size="16" value="" /></td>
