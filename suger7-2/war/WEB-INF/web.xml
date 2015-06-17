@@ -44,4 +44,21 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
     	<servlet-name>login</servlet-name>
     	<url-pattern>/login.do</url-pattern>
     </servlet-mapping>
+ <filter>
+    <filter-name>logincheck</filter-name>
+    <filter-class>jp.tsuda.g.LoginCheckFilter</filter-class>
+</filter>
+<filter-mapping>
+    <filter-name>logincheck</filter-name>
+    <url-pattern>/private.jsp</url-pattern>
+</filter-mapping>    
+     
+<servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>jp.tsuda.g.LogoutServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+</servlet-mapping>
 </web-app>

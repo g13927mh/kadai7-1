@@ -16,6 +16,7 @@ public class LonginServlet extends HttpServlet {
         String thisURL = req.getRequestURI();
 
         resp.setContentType("text/html");
+        
         if (req.getUserPrincipal() != null) {
             resp.getWriter().println("<p>Hello, " +
                                      req.getUserPrincipal().getName() +
