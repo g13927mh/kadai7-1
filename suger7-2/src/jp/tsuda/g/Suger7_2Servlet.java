@@ -34,7 +34,7 @@ public class Suger7_2Servlet extends HttpServlet {
         String res = "[";
         if (list != null){
             for(LinkData data:list){
-                res += "{ id:"+data.getId() +"name:" + data.getName() +"value:" + data.getValue() +"},";
+           //     res += "{ id:"+data.getId() +"name:" + data.getName() +"value:" + data.getValue() +"},";
             }
         }
         res += "]";

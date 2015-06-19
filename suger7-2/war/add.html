@@ -1,18 +1,82 @@
+
  
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>LinkDataの追加</title>
-    </head>
-    <body>
-        <h1>データの追加</h1>
-        <table>
-        <form method="post" action="/add">
-            <tr><th>Name:</th><td><input type="text" name="name"></td></tr>
-            <tr><th>Value:</th><td><input type="text" name="value"></td></tr>
-            <tr><th></th><td><input type="submit" value="追加"></td></tr>
-        </form>
-        </table>
-    </body>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>suger pop</title>
+  </head>
+
+  <body onload="getData(null);">
+    <h1>suger pop</h1>
+    <center>
+ 
+   <form method="post" action="/add" name="chbox">
+<div style="float:center"><br><input type="checkbox" name="pizza1" value="ショートケーキ">ショートケーキ 
+       	  個数:<input type="text" name="count1" size="2" value="0"></div>
+<div style="float:center"><br><input type="checkbox" name="pizza2" value="チョコレートケーキ">チョコレートケーキ
+       	  個数:<input type="text" name="count2" size="2" value="0"></div>
+<div style="float:center"><br><input type="checkbox" name="pizza3" value="ミルフィーユ">ミルフィーユ 
+       	  個数:<input type="text" name="count3" size="2" value="0"></div>
+<div style="float:center"><br><input type="checkbox" name="pizza4" value="いちごのタルト">いちごのタルト
+       	  個数:<input type="text" name="count4" size="2" value="0"></div>
+       	  
+       	 <br>  <tr><th>　名前:</th><td><input type="text" name="title"></td></tr>
+           <br> <tr><th>　住所:</th><td><input type="text" name="url"></td></tr>
+            <br> <tr><th>パスワード:</th><td><input type="text" name="comment"></td></tr>
+<tr><th></th><td><input type="submit" value="追加" onclick="boxCheck()"></td></tr></center>
+<div style="clear:both"></div>
+       </form>
+       
+       
+         <div style="clear:both"></div>  
+         
+ <script>
+
+function boxCheck(){
+
+  //チェックされた項目を記録する変数
+  var str="";
+  
+  //for文でチェックボックスを１つずつ確認
+  for( i=0; i<8; i++ )
+  {
+    //チェックされているか確認する
+    if( document.chbox.elements[i].checked )
+    {
+    	if(document.chbox.elements[i+1].value!=0){
+      //変数strが空でない時、区切りのコンマを入れる
+      if( str != "" ) str=str+", ";
+      
+      //チェックボックスのvalue値を変数strに入れる
+      
+      str=str+document.chbox.elements[i].value+" "+document.chbox.elements[i+1].value+"個が選択されました。";
+      }
+    } 
+  }
+  
+  total = 220*document.chbox.elements[1].value+230*document.chbox.elements[3].value+240*document.chbox.elements[5].value+260*document.chbox.elements[7].value;
+  
+  str = str+" 合計金額は"+ total+"円です。";
+  
+  //strが空の時、警告を出す
+  if( str=="" ){
+     alert( "どれか選択してください。" );
+  }else{
+    alert( str);
+  }
+}
+
+</script>
+ <center>
+    <div><a href="login.jsp">戻る</a></div>
+ </center>
+  </body>
 </html>

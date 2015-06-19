@@ -26,14 +26,14 @@ public class AddLinkDataServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String name = req.getParameter("name");
         String value = req.getParameter("value");
-        LinkData data = new LinkData(name,value);
+        //LinkData data = new LinkData(name,value);
         PersistenceManagerFactory factory = PMF.get();
         PersistenceManager manager = factory.getPersistenceManager();
         try {
-            manager.makePersistent(data);
+        //    manager.makePersistent(data);
         } finally {
             manager.close();
         }
-        resp.sendRedirect("/add.html");
+        resp.sendRedirect("/thankyou.jsp");
     }
 }
